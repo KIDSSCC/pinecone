@@ -30,13 +30,7 @@ class GetImage():
         params = []
         for i in range(1, self.paginator + 1):
             params.append(
-                'tn=resultjson_com&ipn=rj&ct=201326592&is=&\
-                fp=result&queryWord={}&cl=2&lm=-1&ie=utf-8&o\
-                e=utf-8&adpicid=&st=-1&z=&ic=&hd=1&latest=0&\
-                copyright=0&word={}&s=&se=&tab=&width=&height\
-                =&face=0&istype=2&qc=&nc=1&fr=&expermode=&for\
-                ce=&cg=star&pn={}&rn=30&gsm=78&1557125391211\
-                ='.format(keyword, keyword, 30 * i))
+                'tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord={}&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=&hd=1&latest=0&copyright=0&word={}&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&expermode=&force=&cg=star&pn={}&rn=30&gsm=78&1557125391211='.format(keyword, keyword, 30 * i))
         # 返回链接参数
         return params
 
@@ -76,10 +70,11 @@ class GetImage():
     def __call__(self, *args, **kwargs):
         # 获取链接参数
         params = self.get_param()
+        # 根据参数获取url链接
         urls = self.get_urls(params)
         image_url = self.get_image_url(urls)
         self.get_image(image_url)
 
 if __name__ == '__main__':
-    spider = GetImage('明星', 3)
+    spider = GetImage('星穹铁道', 3)
     spider()

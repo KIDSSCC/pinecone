@@ -68,11 +68,12 @@ class GetImage():
                 print('第{}页下载完成'.format(index / 30))
 
     def __call__(self, *args, **kwargs):
-        # 获取链接参数
+        # 获取链接参数,param中包含了每页的一个链接
         params = self.get_param()
         # 根据参数获取url链接
         urls = self.get_urls(params)
         image_url = self.get_image_url(urls)
+        # 返回了每一张图片的url
         self.get_image(image_url)
 
 if __name__ == '__main__':

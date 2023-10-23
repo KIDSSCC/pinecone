@@ -5,3 +5,4 @@ Baidu pineCone course
 - Calculator：计算器程序
 - Something:
   - batchFileName:批量处理文件名
+  - generateRandom:产生随机数，并进行排序
